@@ -1,0 +1,223 @@
+<html lang="es"><head>
+<meta charset="UTF-8">
+<title>Giovanna 💌</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(to bottom, #f9b3b3, #f6a1b4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .container { width: 420px; }
+
+    .card {
+        background-color: #fff5f7;
+        padding: 40px;
+        border-radius: 30px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        position: relative;
+    }
+
+    .hidden { display: none; }
+
+    .overlay-btn {
+        position: absolute;
+        inset: 0;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .title {
+        color: #e43b86;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .subtitle {
+        color: #7a3db8;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .emoji {
+        font-size: 40px;
+        animation: bounce 1.2s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0); }
+    }
+
+    .imagen {
+        width: 180px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+
+    .btn {
+        border: none;
+        padding: 15px 30px;
+        font-size: 16px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    .yes { background-color: #ff4d8d; color: white; }
+    .no  { background-color: #8a9a9a; color: white; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- TARJETA 1 -->
+<div class="card" id="card1">
+    <button class="overlay-btn" id="startBtn"></button>
+    <div class="title">Hola Giovanna, tengo algo que decirte 💌</div>
+    <div class="subtitle">Toca la pantalla</div>
+    <div class="emoji">👆</div>
+</div>
+
+<!-- TARJETA 2 -->
+<div class="card hidden" id="card2">
+    <img class="imagen" src="https://i.pinimg.com/736x/29/bf/b0/29bfb032b8bbc70e02bca8abf348027a.jpg">
+    <div class="title">¿Quieres ser mi San Valentín?</div>
+    <div class="subtitle">❤️ Prometo hacerte muy feliz ese día ❤️</div>
+    <div class="buttons">
+        <button class="btn yes js-yes">Sí 🥰</button>
+        <button class="btn no" id="no2">No 😐</button>
+    </div>
+</div>
+
+<!-- TARJETA 3 -->
+<div class="card hidden" id="card3">
+    <img class="imagen" src="https://i.pinimg.com/736x/5e/a6/2f/5ea62f4344c6b799ae80cc1cff2b6f88.jpg">
+    <div class="title">¿Cómo que no?</div>
+    <div class="subtitle">Te dejaré volver a elegir; a lo mejor leíste mal</div>
+    <div class="buttons">
+        <button class="btn yes js-yes">Sí 🥰</button>
+        <button class="btn no" id="no3">No 😧</button>
+    </div>
+</div>
+
+<!-- TARJETA 4 -->
+<div class="card hidden" id="card4">
+    <img class="imagen" src="https://i.pinimg.com/736x/79/04/62/790462bcece0257c04995fc9522383ac.jpg">
+    <div class="title">¿Por qué no?</div>
+    <div class="subtitle">Piénsalo bien, por favor</div>
+    <div class="buttons">
+        <button class="btn yes js-yes">Sí 🥰</button>
+        <button class="btn no" id="no4">No 😟</button>
+    </div>
+</div>
+
+<!-- TARJETA 5 -->
+<div class="card hidden" id="card5">
+    <img class="imagen" src="https://i.pinimg.com/736x/af/46/d0/af46d01d0cfb1a70c175f66c1e8ccd78.jpg">
+    <div class="title">Yo si me dices que no</div>
+    <div class="subtitle">Es tu decisión</div>
+    <div class="buttons">
+        <button class="btn yes js-yes">Sí 🥰</button>
+        <button class="btn no" id="no5">No 😭</button>
+    </div>
+</div>
+
+<!-- TARJETA 6 -->
+<div class="card hidden" id="card6">
+    <img class="imagen" src="https://i.pinimg.com/736x/fb/b1/4c/fbb14ca60e3a6451f5d2d32bd4c721d3.jpg">
+    <div class="title">No me estás dejando más alternativa</div>
+    <div class="subtitle">Elige bien, última oportunidad</div>
+    <div class="buttons">
+        <button class="btn yes js-yes">Sí 🥰</button>
+        <button class="btn no" id="no6">No 🥺</button>
+    </div>
+</div>
+
+<!-- TARJETA 7 -->
+<div class="card hidden" id="card7">
+    <img class="imagen" src="https://i.pinimg.com/736x/f9/87/73/f9877375812e920f63261739f19d105a.jpg">
+    <div class="title">Bueno, respetaré tu decisión</div>
+    <div class="subtitle">Adelante, eres libre de elegir</div>
+    <div class="buttons">
+        <button class="btn yes js-yes">Sí 🥰</button>
+        <button class="btn yes js-yes">Sí 🥰</button>
+    </div>
+</div>
+
+<!-- TARJETA 8 -->
+<div class="card hidden" id="card8">
+    <img class="imagen" src="https://i.pinimg.com/736x/26/27/f3/2627f31a5f0b461ab0fa8f0de93d902e.jpg">
+    <div class="title">¡Sabía que dirías que sí!</div>
+    <div class="subtitle">En realidad, no estaré ocupado ese día<br>Para ti siempre estaré disponible
+<br><br><br>Te quier mucho<br><br>❤️Giovanna❤️
+</div>
+</div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Inicio: tarjeta 1 -> tarjeta 2
+    document.getElementById("startBtn").addEventListener("click", () => {
+        document.getElementById("card1").classList.add("hidden");
+        document.getElementById("card2").classList.remove("hidden");
+    });
+
+    // NO: ir avanzando de tarjeta en tarjeta
+    document.getElementById("no2").addEventListener("click", () => {
+        document.getElementById("card2").classList.add("hidden");
+        document.getElementById("card3").classList.remove("hidden");
+    });
+    document.getElementById("no3").addEventListener("click", () => {
+        document.getElementById("card3").classList.add("hidden");
+        document.getElementById("card4").classList.remove("hidden");
+    });
+    document.getElementById("no4").addEventListener("click", () => {
+        document.getElementById("card4").classList.add("hidden");
+        document.getElementById("card5").classList.remove("hidden");
+    });
+    document.getElementById("no5").addEventListener("click", () => {
+        document.getElementById("card5").classList.add("hidden");
+        document.getElementById("card6").classList.remove("hidden");
+    });
+    document.getElementById("no6").addEventListener("click", () => {
+        document.getElementById("card6").classList.add("hidden");
+        document.getElementById("card7").classList.remove("hidden");
+    });
+
+    // SÍ: todos llevan a tarjeta 8
+    function irATarjeta8() {
+        for (let i = 1; i <= 7; i++) {
+            const c = document.getElementById("card" + i);
+            if (c) c.classList.add("hidden");
+        }
+        document.getElementById("card8").classList.remove("hidden");
+    }
+
+    document.querySelectorAll(".js-yes").forEach(btn => {
+        btn.addEventListener("click", irATarjeta8);
+    });
+});
+</script>
+
+
+
+</body></html>
